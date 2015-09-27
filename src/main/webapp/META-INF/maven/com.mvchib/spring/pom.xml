@@ -9,6 +9,7 @@
 	<properties>
 		<hibernate.version>4.2.0.Final</hibernate.version>
 		<mysql.connector.version>5.1.21</mysql.connector.version>
+		<postgresql.connector.version>9.4-1201-jdbc41</postgresql.connector.version>
 		<spring.version>3.2.2.RELEASE</spring.version>
 	</properties>
 
@@ -24,10 +25,15 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>mysql</groupId>-->
+			<!--<artifactId>mysql-connector-java</artifactId>-->
+			<!--<version>${mysql.connector.version}</version>-->
+		<!--</dependency>-->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.connector.version}</version>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.connector.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-dbcp</groupId>

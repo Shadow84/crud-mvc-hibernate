@@ -1,27 +1,28 @@
 package com.sprhib.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="users")
 public class User {
-	
+
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	private String name;
-	
+
 	private Integer age;
 
 	private Boolean isAdmin;
 
 	private Date createdDate;
-	
+
+	public User() {
+		this.createdDate = new Date();
+	}
+
 	public Integer getId() {
 		return id;
 	}
