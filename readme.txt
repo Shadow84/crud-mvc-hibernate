@@ -1,3 +1,5 @@
+#MYSQL
+
 CREATE DATABASE 'test';
 USE 'test';
 
@@ -34,3 +36,25 @@ INSERT INTO `users` (name,age,isAdmin)
 VALUES ('Lillo2', 453, b'1');
 INSERT INTO `users` (name,age,isAdmin)
 VALUES ('Lillo1', 4, b'1');
+
+
+#postgreSQL
+
+CREATE TABLE users
+(
+  id integer NOT NULL DEFAULT nextval('"users_Id_seq"'::regclass),
+ 
+ name text,
+  age integer,
+  isadmin boolean NOT NULL DEFAULT false,
+  
+createddate timestamp without time zone DEFAULT now(),
+  
+CONSTRAINT users_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+
+ALTER TABLE users
+  OWNER TO root;
